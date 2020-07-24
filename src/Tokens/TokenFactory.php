@@ -20,6 +20,7 @@ class TokenFactory
     public static function buildFromHtml(string $html, Token $parent = null, bool $throwOnError = true)
     {
         $matchCriteria = array(
+            'Spaces' => "/^\s* +\s*/",
             'Php' => "/^\s*<\?(php)?\s/i",
             'Comment' => "/^\s*<!--/",
             'CData' => "/^\s*<!\[CDATA\[/",
